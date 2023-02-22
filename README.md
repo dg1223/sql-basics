@@ -139,7 +139,7 @@ FROM orders
 
 **Edge case**
 
-When finding the earliest or most recent events or smallest, you can use MIN(). However, on the  there is an edge case where you may end up with ties. For example, if multiple orders were placed on exactly the same second or even microsecond (can easily happen on Amazon on Black Friday or Boxing Day for example with a few hundred million orders are placed in a single day), then simply finding the earliest or most recent event will only show 1 result and omit the rest. It's not factually correct though. To find all such orders, you can use the RANK() OVER (ORDER BY ) window function and retain all orders with Rank = 1. It's an advanced concept (L7) but is useful to accommodate such edge cases.
+When finding the earliest or most recent events or smallest, you can use MIN(). However, there is an edge case where you may end up with ties. For example, if multiple orders were placed on exactly the same second or even microsecond (can easily happen on Amazon on Black Friday or Boxing Day with a millions of orders placed on a single day), then trying to find the earliest or most recent event will show only 1 result and omit the rest. However, it's not correct. To find all such orders, you can use the `RANK() OVER (ORDER BY )` window function and retain all orders with `rank = 1`.
 
 ### **HAVING**
 
