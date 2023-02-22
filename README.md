@@ -15,7 +15,7 @@ graph TD
 ### IN
 
 - Double quotes “” if there is an apostrophe in the text
-    - How to escape apostrophe
+    - How to escape apostrophe (Postgres)
         - Macy’s —> Macy’’s
 
 ### BETWEEN
