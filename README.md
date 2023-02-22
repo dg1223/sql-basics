@@ -313,8 +313,7 @@ SELECT col1,
        RANK() OVER monthly_window AS rank
 FROM table
 WHERE col1 = [value]
-WINDOW monthly_window AS
-		(PARTITION BY col2 ORDER BY col3)
+WINDOW monthly_window AS (PARTITION BY col2 ORDER BY col3)
 ORDER BY col2
 ```
 
