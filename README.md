@@ -119,7 +119,7 @@ Single row output → GROUP BY required
 
 ```sql
 SELECT total_amt_usd,
-		COUNT(1) AS total_count
+       COUNT(1) AS total_count
 FROM orders
 GROUP BY 1
 ```
@@ -128,7 +128,7 @@ Append aggregated result to every row → GROUP BY not required
 
 ```sql
 SELECT total_amt_usd,
-		(SELECT COUNT(1) FROM orders) AS total_count
+       (SELECT COUNT(1) FROM orders) AS total_count
 FROM orders
 ```
 
@@ -176,7 +176,7 @@ AGE, EXTRACT, OVERLAP (boolean), CURRENT_DATE (includes timezone), CURRENT_TIMES
 
 ```sql
 CASE WHEN std_qty = 0 OR std_usd = 15 THEN 0
-		 ELSE std_qty/100 END AS metric
+     ELSE std_qty/100 END AS metric
 -- else is optional
 ```
 
@@ -190,14 +190,14 @@ CASE WHEN std_qty = 0 OR std_usd = 15 THEN 0
 ```mermaid
 graph TD
   A[Subqueries]
-    A --> B[Placement]
-    A --> C[Type]
-		B --> |CTE| D[WITH]
-		B --> |correlated| E[nested]
-		B --> |FROM| F[inline]
-		B --> |value| G[scalar]
-		C --> H[simple]
-		C --> |WHERE| I[correlated]
+  A --> B[Placement]
+  A --> C[Type]
+  B --> |CTE| D[WITH]
+  B --> |correlated| E[nested]
+  B --> |FROM| F[inline]
+  B --> |value| G[scalar]
+  C --> H[simple]
+  C --> |WHERE| I[correlated]
 
 ```
 
@@ -308,12 +308,12 @@ Ranks are not skipped for ties
 
 ```sql
 SELECT col1,
-			 col2,
-			 RANK() OVER **monthly_window** AS rank
+       col2,
+       RANK() OVER monthly_window AS rank
 FROM table
 WHERE col1 = [value]
-**WINDOW** **monthly_window** AS
-					(PARTITION BY col2 ORDER BY col3)
+WINDOW monthly_window AS
+		(PARTITION BY col2 ORDER BY col3)
 ORDER BY col2
 ```
 
