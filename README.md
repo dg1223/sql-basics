@@ -3,8 +3,6 @@ These notes are meant to be a refresher on SQL basics assuming that the reader a
 
 ## SQL Order of Execution
 
-[Mermaid cheat sheet](https://jojozhuang.github.io/tutorial/mermaid-cheat-sheet/)
-
 ```mermaid
 graph TD
   id1[FROM + JOIN] --> WHERE --> id2[GROUP BY] --> HAVING --> SELECT --> id3[ORDER BY] --> LIMIT
