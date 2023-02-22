@@ -1,4 +1,5 @@
 # SQL Basics
+These notes are meant to be a refresher on SQL basics assuming that the reader already has some basic understanding of SQL.
 
 ## SQL Order of Execution
 
